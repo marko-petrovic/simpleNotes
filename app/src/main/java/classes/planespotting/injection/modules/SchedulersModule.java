@@ -5,8 +5,8 @@ import java.util.concurrent.Executors;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-import classes.planespotting.injection.BackgroundScheduler;
-import classes.planespotting.injection.MainThreadScheduler;
+import classes.planespotting.injection.schedulers.BackgroundScheduler;
+import classes.planespotting.injection.schedulers.MainThreadScheduler;
 import dagger.Module;
 import dagger.Provides;
 import io.reactivex.Scheduler;

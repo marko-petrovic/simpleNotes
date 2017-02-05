@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 
 import com.dualquo.te.planespotting.Application;
+import com.dualquo.te.planespotting.activities.BaseActivity;
 
 import javax.inject.Singleton;
 
@@ -31,4 +32,6 @@ public interface ApplicationComponent {
     Resources getResources();
 
     void inject(Application target);
+
+    void inject(BaseActivity target);
 }
