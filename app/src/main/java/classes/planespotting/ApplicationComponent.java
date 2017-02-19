@@ -7,6 +7,7 @@ import android.content.res.Resources;
 
 import com.dualquo.te.planespotting.Application;
 import com.dualquo.te.planespotting.activities.BaseActivity;
+import com.dualquo.te.planespotting.activities.MainActivity;
 
 import javax.inject.Singleton;
 
@@ -34,4 +35,6 @@ public interface ApplicationComponent {
     void inject(Application target);
 
     void inject(BaseActivity target);
+
+    void inject(MainActivity target);
 }
