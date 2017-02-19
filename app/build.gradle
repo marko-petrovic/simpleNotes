@@ -41,21 +41,22 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
     compile 'com.android.support:appcompat-v7:25.1.1'
     compile 'com.android.support:multidex:1.0.1'
     compile 'org.functionaljava:functionaljava:4.5'
     compile 'io.reactivex.rxjava2:rxjava:2.0.0'
-    apt 'com.google.dagger:dagger-compiler:2.7'
     compile 'com.google.dagger:dagger:2.7'
-    provided 'javax.annotation:jsr250-api:1.0'
     compile 'javax.inject:javax.inject:1'
-
+    compile 'com.android.support:design:25.1.1'
     testCompile 'junit:junit:4.12'
     testCompile 'org.robolectric:robolectric:3.0'
     testCompile 'org.mockito:mockito-core:1.9.5'
     testCompile 'org.powermock:powermock-module-junit4:1.6.1'
     testCompile 'org.powermock:powermock-api-mockito:1.6.1'
     testCompile 'com.google.dagger:dagger:2.7'
-    testProvided 'javax.annotation:jsr250-api:1.0'
     testCompile 'javax.inject:javax.inject:1'
+    apt 'com.google.dagger:dagger-compiler:2.7'
+    provided 'javax.annotation:jsr250-api:1.0'
+    testProvided 'javax.annotation:jsr250-api:1.0'
 }
