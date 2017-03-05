@@ -1,12 +1,12 @@
-package classes.planespotting.injection.modules;
+package classes.simpleNotes.injection.modules;
 
 import java.util.concurrent.Executors;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-import classes.planespotting.injection.schedulers.BackgroundScheduler;
-import classes.planespotting.injection.schedulers.MainThreadScheduler;
+import classes.simpleNotes.injection.schedulers.BackgroundScheduler;
+import classes.simpleNotes.injection.schedulers.MainThreadScheduler;
 import dagger.Module;
 import dagger.Provides;
 import io.reactivex.Scheduler;

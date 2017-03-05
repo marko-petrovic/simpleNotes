@@ -1,4 +1,4 @@
-package classes.planespotting.ui.presenter;
+package classes.simpleNotes.ui.presenter;
 
 import java.io.Serializable;
 

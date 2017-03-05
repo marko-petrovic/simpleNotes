@@ -1,17 +1,17 @@
-package com.dualquo.te.planespotting.activities;
+package com.dualquo.te.simpleNotes.activities;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.dualquo.te.planespotting.Application;
+import com.dualquo.te.simpleNotes.Application;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import classes.planespotting.injection.modules.SchedulersModule;
-import classes.planespotting.injection.schedulers.BackgroundScheduler;
-import classes.planespotting.injection.schedulers.MainThreadScheduler;
+import classes.simpleNotes.injection.modules.SchedulersModule;
+import classes.simpleNotes.injection.schedulers.BackgroundScheduler;
+import classes.simpleNotes.injection.schedulers.MainThreadScheduler;
 import io.reactivex.Scheduler;
 
 /**
@@ -34,16 +34,16 @@ public class BaseActivity extends AppCompatActivity {
 
         Application.getComponent().inject(this);
     }
-    
+
     /**
      * Navigator that helps Activity do navigation based on Presenters logic.
      */
     public interface Navigator {
 
         /**
-         * Navigate depending on type of given data
+         * Navigate depending on type of given data.
          *
-         * @param data
+         * @param data {@link Object} that defines navigational parameters.
          */
         void navigate(Object data);
 

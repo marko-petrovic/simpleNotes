@@ -1,18 +1,18 @@
-package classes.planespotting;
+package classes.simpleNotes;
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 
-import com.dualquo.te.planespotting.Application;
-import com.dualquo.te.planespotting.activities.BaseActivity;
-import com.dualquo.te.planespotting.activities.MainActivity;
+import com.dualquo.te.simpleNotes.Application;
+import com.dualquo.te.simpleNotes.activities.BaseActivity;
+import com.dualquo.te.simpleNotes.activities.MainActivity;
 
 import javax.inject.Singleton;
 
-import classes.planespotting.injection.modules.ApplicationModule;
-import classes.planespotting.injection.modules.SchedulersModule;
+import classes.simpleNotes.injection.modules.ApplicationModule;
+import classes.simpleNotes.injection.modules.SchedulersModule;
 import dagger.Component;
 
 @Singleton

@@ -1,4 +1,4 @@
-package classes.planespotting.injection.modules;
+package classes.simpleNotes.injection.modules;
 
 import android.annotation.SuppressLint;
 import android.app.Application;

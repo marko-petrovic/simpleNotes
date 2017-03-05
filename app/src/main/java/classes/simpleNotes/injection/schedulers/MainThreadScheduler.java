@@ -1,4 +1,4 @@
-package classes.planespotting.injection.schedulers;
+package classes.simpleNotes.injection.schedulers;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -7,7 +7,7 @@ android {
     compileSdkVersion 25
 
     defaultConfig {
-        applicationId "com.dualquo.te.planespotting"
+        applicationId "com.dualquo.te.simpleNotes"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1

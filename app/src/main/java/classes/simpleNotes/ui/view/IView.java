@@ -1,4 +1,4 @@
-package classes.planespotting.ui.view;
+package classes.simpleNotes.ui.view;
 
 /**
  * Represents a base View interface.

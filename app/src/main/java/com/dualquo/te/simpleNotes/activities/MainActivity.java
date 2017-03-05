@@ -1,8 +1,8 @@
-package com.dualquo.te.planespotting.activities;
+package com.dualquo.te.simpleNotes.activities;
 
 import android.os.Bundle;
 
-import com.dualquo.te.planespotting.R;
+import com.dualquo.te.simpleNotes.R;
 
 public class MainActivity extends BaseActivity {
 
