@@ -3,7 +3,7 @@ package classes.simpleNotes.ui.presenter;
 import java.io.Serializable;
 
 /**
- * Presents data to views.
+ * Represents a base Presenter interface.
  */
 public interface IPresenter {
     /**
@@ -22,6 +22,16 @@ public interface IPresenter {
      * @return true if call is processed, false if call should be processed by parent or not supported.
      */
     boolean onBack();
+
+    /**
+     * Subscribes to Interactors.
+     */
+    void subscribe();
+
+    /**
+     * Unsubscribes from Interactors.
+     */
+    void unsubscribe();
 
     /**
      * Called when {@link IPresenter} should return its state.

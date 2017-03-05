@@ -9,8 +9,8 @@ import classes.simpleNotes.injection.schedulers.BackgroundScheduler;
 import classes.simpleNotes.injection.schedulers.MainThreadScheduler;
 import dagger.Module;
 import dagger.Provides;
-import io.reactivex.Scheduler;
-import io.reactivex.schedulers.Schedulers;
+import rx.Scheduler;
+import rx.schedulers.Schedulers;
 
 @Module
 public class SchedulersModule {

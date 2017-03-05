@@ -12,7 +12,7 @@ import javax.inject.Named;
 import classes.simpleNotes.injection.modules.SchedulersModule;
 import classes.simpleNotes.injection.schedulers.BackgroundScheduler;
 import classes.simpleNotes.injection.schedulers.MainThreadScheduler;
-import io.reactivex.Scheduler;
+import rx.Scheduler;
 
 /**
  * Base {@link android.app.Activity} that provides common features to other activities.
