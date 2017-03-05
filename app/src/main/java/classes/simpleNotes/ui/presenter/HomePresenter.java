@@ -8,6 +8,8 @@ import classes.simpleNotes.ui.view.IHomeView;
 import rx.Scheduler;
 import rx.subscriptions.CompositeSubscription;
 
+import static com.dualquo.te.simpleNotes.activities.MainActivity.MainActivityNavigator.NAVIGATE_ADD_NOTE;
+
 /**
  * Presents and manages {@link IHomeView}, data, and interactions.
  */
@@ -65,6 +67,6 @@ public class HomePresenter implements IPresenter, IHomeView.Listener {
 
     @Override
     public void addNewNote() {
-        //TODO call Navigator here to navigate to note adding screen.
+        navigator.navigate(NAVIGATE_ADD_NOTE);
     }
 }
