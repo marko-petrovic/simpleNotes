@@ -2,4 +2,15 @@
     <string name="app_name">Simple Notes</string>
 
     <string name="home_no_available_notes">No notes so far.</string>
+
+    <string name="new_note_title">Add New Note</string>
+    <string name="new_note_title_hint">Enter title here</string>
+    <string name="new_note_body_hint">Enter note body here</string>
+    <string name="new_note_button_title">Add New Note</string>
+    <string name="new_note_validation_error_title">Error</string>
+    <string name="new_note_validation_error_dialog_positive_button">Got it</string>
+    <string name="new_note_validation_error_message_both_empty">Looks like both Title and Body are empty.</string>
+    <string name="new_note_validation_error_message_title_empty">Looks like Title of this note is empty.</string>
+    <string name="new_note_validation_error_message_body_empty">Looks like Body message of this note is empty.</string>
+    <string name="new_note_validation_passed_fine">Note is valid.</string>
 </resources>

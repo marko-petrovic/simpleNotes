@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import com.dualquo.te.simpleNotes.Application;
 import com.dualquo.te.simpleNotes.activities.BaseActivity;
 import com.dualquo.te.simpleNotes.activities.MainActivity;
+import com.dualquo.te.simpleNotes.activities.NewNoteActivity;
 
 import javax.inject.Singleton;
 
@@ -37,4 +38,6 @@ public interface ApplicationComponent {
     void inject(BaseActivity target);
 
     void inject(MainActivity target);
+
+    void inject(NewNoteActivity target);
 }

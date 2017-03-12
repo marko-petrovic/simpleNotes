@@ -4,11 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.dualquo.te.simpleNotes.Application;
 import com.dualquo.te.simpleNotes.R;
 
 import classes.simpleNotes.ui.presenter.HomePresenter;
 import classes.simpleNotes.ui.view.IHomeView;
 
+/**
+ * The first screen of the app that has the list of added notes and FAB for adding new note.
+ */
 public class MainActivity extends BaseActivity {
 
     private HomePresenter homePresenter;
@@ -29,6 +33,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Application.getComponent().inject(this);
 
         IHomeView homeView = (IHomeView) findViewById(R.id.home_view);
 
@@ -64,7 +70,7 @@ public class MainActivity extends BaseActivity {
         public void navigate(Object data) {
             switch ((String) data) {
                 case NAVIGATE_ADD_NOTE:
-                    //TODO call newIntent from future AddNoteActivity
+                    startActivity(NewNoteActivity.newIntent(MainActivity.this));
                     break;
             }
         }

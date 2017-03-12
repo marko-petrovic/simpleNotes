@@ -30,11 +30,8 @@ public interface IHomeView extends IView {
         /**
          * Null-object pattern.
          */
-        Listener NULL = new Listener() {
-            @Override
-            public void addNewNote() {
-                // Implement in Presenter.
-            }
+        Listener NULL = () -> {
+            // Implement in Presenter.
         };
 
         /**

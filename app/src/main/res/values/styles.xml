@@ -17,4 +17,35 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="NewNoteTitleEditText" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_gravity">center_vertical|left</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="NewNoteBodyEditText" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:layout_gravity">start|top</item>
+        <item name="android:gravity">start|top</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="SimpleNoteButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_height">62dp</item>
+        <item name="android:background">@drawable/simple_note_button</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/colorButtonText</item>
+    </style>
+
 </resources>
