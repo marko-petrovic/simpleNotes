@@ -75,7 +75,6 @@ public class NewNoteActivity extends BaseActivity {
         public void navigate(Object data) {
             switch ((String) data) {
                 case NAVIGATE_TO_MAIN_SCREEN:
-                    startActivity(new Intent(NewNoteActivity.this, MainActivity.class));
                     finish();
                     break;
             }

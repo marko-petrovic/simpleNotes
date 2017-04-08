@@ -8,6 +8,7 @@ import classes.simpleNotes.ui.interactor.ValidateNewNoteUseCase;
 import classes.simpleNotes.ui.model.NoteViewModel;
 import classes.simpleNotes.ui.view.INewNoteView;
 import rx.Scheduler;
+import rx.subjects.PublishSubject;
 import rx.subscriptions.CompositeSubscription;
 
 import static com.dualquo.te.simpleNotes.activities.NewNoteActivity.NewNoteNavigator.NAVIGATE_TO_MAIN_SCREEN;
@@ -23,7 +24,9 @@ public class NewNotePresenter implements IPresenter, INewNoteView.Listener {
     private final Scheduler backgroundTaskScheduler;
     private final Scheduler mainThreadScheduler;
 
-    private CompositeSubscription subscriptions;
+    private CompositeSubscription compositeSubscription;
+
+    private final PublishSubject<NoteViewModel> saveNoteSubject = PublishSubject.create();
 
     public NewNotePresenter(
             INewNoteView newNoteView,
@@ -57,12 +60,32 @@ public class NewNotePresenter implements IPresenter, INewNoteView.Listener {
 
     @Override
     public void subscribe() {
-        subscriptions = new CompositeSubscription();
+        compositeSubscription = new CompositeSubscription();
+
+        compositeSubscription.add(
+                saveNoteSubject
+                        .observeOn(mainThreadScheduler)
+                        .subscribeOn(backgroundTaskScheduler)
+                        .flatMap(validateNewNoteUseCase::validateNewNote)
+                        .subscribe(noteValidationViewModel -> {
+                                    switch (noteValidationViewModel.validationResult) {
+                                        case NEW_NOTE_VALID:
+                                            //TODO note is valid, so proceed with saving it,
+                                            //TODO and then navigating back..
+                                            navigator.navigate(NAVIGATE_TO_MAIN_SCREEN);
+                                            break;
+                                        default:
+                                            newNoteView.newNoteNotValid(noteValidationViewModel);
+                                            break;
+                                    }
+                                }
+                        )
+        );
     }
 
     @Override
     public void unsubscribe() {
-        subscriptions.unsubscribe();
+        compositeSubscription.unsubscribe();
     }
 
     @Override
@@ -72,21 +95,6 @@ public class NewNotePresenter implements IPresenter, INewNoteView.Listener {
 
     @Override
     public void saveNote(NoteViewModel noteViewModel) {
-        validateNewNoteUseCase
-                .validateNewNote(noteViewModel)
-                .subscribe(noteValidationViewModel -> {
-                            switch (noteValidationViewModel.validationResult) {
-                                case NEW_NOTE_VALID:
-                                    //TODO note is valid, so proceed with saving and then navigating back..
-                                    navigator.navigate(NAVIGATE_TO_MAIN_SCREEN);
-                                    break;
-                                case NEW_NOTE_NOT_VALID_MISSING_BODY:
-                                case NEW_NOTE_NOT_VALID_MISSING_TITLE:
-                                case NEW_NOTE_NOT_VALID_MISSING_BOTH:
-                                    newNoteView.newNoteNotValid(noteValidationViewModel);
-                                    break;
-                            }
-                        }
-                );
+        saveNoteSubject.onNext(noteViewModel);
     }
 }

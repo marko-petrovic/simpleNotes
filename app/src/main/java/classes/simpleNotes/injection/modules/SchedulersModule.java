@@ -10,6 +10,7 @@ import classes.simpleNotes.injection.schedulers.MainThreadScheduler;
 import dagger.Module;
 import dagger.Provides;
 import rx.Scheduler;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 @Module
@@ -28,7 +29,7 @@ public class SchedulersModule {
     @Named(MAIN_THREAD_SCHEDULER)
     @Singleton
     Scheduler provideAndroidScheduler() {
-        return Schedulers.io();
+        return AndroidSchedulers.mainThread();
     }
 
     @BackgroundScheduler
