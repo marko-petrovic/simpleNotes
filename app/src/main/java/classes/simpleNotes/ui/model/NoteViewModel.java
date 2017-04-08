@@ -3,7 +3,7 @@ package classes.simpleNotes.ui.model;
 /**
  * Represents view model of a note.
  */
-public class NoteViewModel {
+public class NoteViewModel implements IViewModel {
     /**
      * Title of a note.
      */

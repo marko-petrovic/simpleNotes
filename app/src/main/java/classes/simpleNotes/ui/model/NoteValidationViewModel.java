@@ -5,7 +5,7 @@ import static classes.simpleNotes.ui.model.NoteValidationViewModel.NewNoteValida
 /**
  * Represents view model of a new note validation.
  */
-public class NoteValidationViewModel {
+public class NoteValidationViewModel implements IViewModel {
     /**
      * Validation result as enum.
      */
