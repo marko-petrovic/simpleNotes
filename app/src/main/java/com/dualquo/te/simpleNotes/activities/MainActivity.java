@@ -3,6 +3,7 @@ package com.dualquo.te.simpleNotes.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.dualquo.te.simpleNotes.Application;
 import com.dualquo.te.simpleNotes.R;
@@ -30,7 +31,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

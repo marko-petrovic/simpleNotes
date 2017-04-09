@@ -8,6 +8,7 @@ import com.dualquo.te.simpleNotes.R;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import classes.simpleNotes.ui.model.GeneralAlert;
 import classes.simpleNotes.ui.model.NoteValidationViewModel;
 
 /**

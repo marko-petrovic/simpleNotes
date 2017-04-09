@@ -1,5 +1,7 @@
 package classes.simpleNotes.ui.view.alerts;
 
+import classes.simpleNotes.ui.model.GeneralAlert;
+
 /**
  * Interface for alert views that will present various alert messages..
  */
@@ -39,7 +41,7 @@ public interface IGeneralAlertView extends IAlertView<GeneralAlert> {
         };
 
         /**
-         * Called when user wants to dismiss information alert dialog.
+         * Called when user wants to dismiss general alert dialog.
          */
         void dismiss();
 

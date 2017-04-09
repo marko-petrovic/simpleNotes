@@ -17,13 +17,6 @@ public interface INewNoteView extends IView {
     void setListener(@NotNull Listener listener);
 
     /**
-     * Show when new note entry is not valid.
-     *
-     * @param noteValidationViewModel {@link NoteValidationViewModel} with error message.
-     */
-    void newNoteNotValid(NoteValidationViewModel noteValidationViewModel);
-
-    /**
      * UI interactions listener.
      */
     interface Listener {

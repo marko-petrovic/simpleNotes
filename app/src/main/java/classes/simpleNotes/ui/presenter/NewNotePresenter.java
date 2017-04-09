@@ -4,13 +4,16 @@ import com.dualquo.te.simpleNotes.activities.BaseActivity.Navigator;
 
 import java.io.Serializable;
 
+import classes.simpleNotes.alerts.GeneralAlertsQueue;
 import classes.simpleNotes.ui.interactor.ValidateNewNoteUseCase;
 import classes.simpleNotes.ui.model.NoteViewModel;
 import classes.simpleNotes.ui.view.INewNoteView;
+import classes.simpleNotes.ui.model.GeneralAlert;
 import rx.Scheduler;
 import rx.subjects.PublishSubject;
 import rx.subscriptions.CompositeSubscription;
 
+import static classes.simpleNotes.ui.model.GeneralAlert.GeneralAlertType.NOTE_NOT_VALID;
 import static com.dualquo.te.simpleNotes.activities.NewNoteActivity.NewNoteNavigator.NAVIGATE_TO_MAIN_SCREEN;
 
 /**
@@ -23,19 +26,21 @@ public class NewNotePresenter implements IPresenter, INewNoteView.Listener {
     private final Navigator navigator;
     private final Scheduler backgroundTaskScheduler;
     private final Scheduler mainThreadScheduler;
+    private final PublishSubject<NoteViewModel> saveNoteSubject = PublishSubject.create();
+    private final GeneralAlertsQueue generalAlertsQueue;
 
     private CompositeSubscription compositeSubscription;
-
-    private final PublishSubject<NoteViewModel> saveNoteSubject = PublishSubject.create();
 
     public NewNotePresenter(
             INewNoteView newNoteView,
             ValidateNewNoteUseCase validateNewNoteUseCase,
+            GeneralAlertsQueue generalAlertsQueue,
             Navigator navigator,
             Scheduler backgroundTaskScheduler,
             Scheduler mainThreadScheduler) {
         this.newNoteView = newNoteView;
         this.validateNewNoteUseCase = validateNewNoteUseCase;
+        this.generalAlertsQueue = generalAlertsQueue;
         this.navigator = navigator;
         this.backgroundTaskScheduler = backgroundTaskScheduler;
         this.mainThreadScheduler = mainThreadScheduler;
@@ -70,12 +75,19 @@ public class NewNotePresenter implements IPresenter, INewNoteView.Listener {
                         .subscribe(noteValidationViewModel -> {
                                     switch (noteValidationViewModel.validationResult) {
                                         case NEW_NOTE_VALID:
-                                            //TODO note is valid, so proceed with saving it,
-                                            //TODO and then navigating back..
+                                            //TODO should do saving here
                                             navigator.navigate(NAVIGATE_TO_MAIN_SCREEN);
                                             break;
+                                        case NEW_NOTE_NOT_VALID_MISSING_BODY:
+                                        case NEW_NOTE_NOT_VALID_MISSING_TITLE:
+                                        case NEW_NOTE_NOT_VALID_MISSING_BOTH:
                                         default:
-                                            newNoteView.newNoteNotValid(noteValidationViewModel);
+                                            generalAlertsQueue.postAlert(
+                                                    new GeneralAlert.Builder()
+                                                            .generalAlertType(NOTE_NOT_VALID)
+                                                            .viewModel(noteValidationViewModel)
+                                                            .build()
+                                            );
                                             break;
                                     }
                                 }

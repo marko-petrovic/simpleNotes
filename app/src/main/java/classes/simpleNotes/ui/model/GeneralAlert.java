@@ -1,6 +1,4 @@
-package classes.simpleNotes.ui.view.alerts;
-
-import classes.simpleNotes.ui.model.IViewModel;
+package classes.simpleNotes.ui.model;
 
 /**
  * Model class of general alert, carrying GeneralAlertType identifier and View Model. <br>

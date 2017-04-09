@@ -3,12 +3,14 @@ package com.dualquo.te.simpleNotes.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.dualquo.te.simpleNotes.Application;
 import com.dualquo.te.simpleNotes.R;
 
 import javax.inject.Inject;
 
+import classes.simpleNotes.alerts.GeneralAlertsQueue;
 import classes.simpleNotes.ui.interactor.ValidateNewNoteUseCase;
 import classes.simpleNotes.ui.presenter.NewNotePresenter;
 import classes.simpleNotes.ui.view.INewNoteView;
@@ -20,6 +22,8 @@ public class NewNoteActivity extends BaseActivity {
 
     @Inject
     ValidateNewNoteUseCase validateNewNoteUseCase;
+    @Inject
+    GeneralAlertsQueue generalAlertsQueue;
 
     private NewNotePresenter newNotePresenter;
 
@@ -34,7 +38,7 @@ public class NewNoteActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_note);
 
@@ -47,6 +51,7 @@ public class NewNoteActivity extends BaseActivity {
         newNotePresenter = new NewNotePresenter(
                 newNoteView,
                 validateNewNoteUseCase,
+                generalAlertsQueue,
                 navigator,
                 backgroundTaskScheduler,
                 mainThreadScheduler
