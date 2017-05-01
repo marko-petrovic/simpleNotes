@@ -11,6 +11,9 @@ public class NoteModel extends ModelObject {
     @Ignore
     String kind = getClass().getSimpleName();
 
+    /**
+     * Database id used as a primary key.
+     */
     @PrimaryKey
     @Required
     private String id;
@@ -20,6 +23,18 @@ public class NoteModel extends ModelObject {
 
     @Required
     private Double updatedTimeStamp;
+
+    /**
+     * Title of a note.
+     */
+    @Required
+    private String noteTitle;
+
+    /**
+     * Text body of a note.
+     */
+    @Required
+    private String noteText;
 
     @Override
     public String getId() {
@@ -49,5 +64,21 @@ public class NoteModel extends ModelObject {
     @Override
     public void setUpdatedTimeStamp(Double updatedTimeStamp) {
         this.updatedTimeStamp = updatedTimeStamp;
+    }
+
+    public String getNoteTitle() {
+        return noteTitle;
+    }
+
+    public void setNoteTitle(String noteTitle) {
+        this.noteTitle = noteTitle;
+    }
+
+    public String getNoteText() {
+        return noteText;
+    }
+
+    public void setNoteText(String noteText) {
+        this.noteText = noteText;
     }
 }
