@@ -9,7 +9,7 @@ import classes.simpleNotes.DaggerApplicationComponent;
 import classes.simpleNotes.injection.modules.ApplicationModule;
 
 /**
- * Application class.
+ * Application class. An entry point to application.
  */
 public class Application extends MultiDexApplication {
 
