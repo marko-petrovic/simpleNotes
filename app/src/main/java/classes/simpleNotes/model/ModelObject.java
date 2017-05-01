@@ -2,10 +2,12 @@ package classes.simpleNotes.model;
 
 import java.io.Serializable;
 
+import io.realm.RealmObject;
+
 /**
- * Represents base parent class for all local model objects.
+ * Represents base parent class for all model objects.
  */
-public class ModelObject implements AutoIdObject, Serializable {
+public class ModelObject extends RealmObject implements AutoIdObject, Serializable {
     private String id;
     private Double createdTimeStamp;
     private Double updatedTimeStamp;
