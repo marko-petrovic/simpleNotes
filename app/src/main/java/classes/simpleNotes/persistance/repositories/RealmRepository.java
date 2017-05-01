@@ -1,4 +1,4 @@
-package classes.simpleNotes.persistance;
+package classes.simpleNotes.persistance.repositories;
 
 import java.io.File;
 import java.io.IOException;

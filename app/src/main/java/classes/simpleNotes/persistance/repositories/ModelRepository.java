@@ -1,4 +1,4 @@
-package classes.simpleNotes.persistance;
+package classes.simpleNotes.persistance.repositories;
 
 import classes.simpleNotes.model.ModelObject;
 import fj.data.List;

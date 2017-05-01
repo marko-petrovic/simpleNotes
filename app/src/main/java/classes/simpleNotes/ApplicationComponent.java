@@ -12,13 +12,21 @@ import com.dualquo.te.simpleNotes.activities.NewNoteActivity;
 
 import javax.inject.Singleton;
 
+import classes.simpleNotes.injection.modules.ApplicationBindersModule;
 import classes.simpleNotes.injection.modules.ApplicationModule;
+import classes.simpleNotes.injection.modules.ApplicationProvidersModule;
+import classes.simpleNotes.injection.modules.DatabaseTransactionsModule;
+import classes.simpleNotes.injection.modules.LocalRepositoriesModule;
 import classes.simpleNotes.injection.modules.SchedulersModule;
 import dagger.Component;
 
 @Singleton
 @Component(modules = {
         ApplicationModule.class,
+        ApplicationBindersModule.class,
+        ApplicationProvidersModule.class,
+        DatabaseTransactionsModule.class,
+        LocalRepositoriesModule.class,
         SchedulersModule.class
 })
 public interface ApplicationComponent {

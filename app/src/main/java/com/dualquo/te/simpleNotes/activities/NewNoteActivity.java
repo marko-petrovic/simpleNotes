@@ -19,9 +19,9 @@ import classes.simpleNotes.ui.view.INewNoteView;
  * Screen for adding a new note.
  */
 public class NewNoteActivity extends BaseActivity {
-
     @Inject
     ValidateNewNoteUseCase validateNewNoteUseCase;
+
     @Inject
     GeneralAlertsQueue generalAlertsQueue;
 
