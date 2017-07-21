@@ -1,4 +1,4 @@
-package classes.simpleNotes.model;
+package classes.simpleNotes.persistance.model;
 
 import io.realm.annotations.Ignore;
 import io.realm.annotations.PrimaryKey;
@@ -11,16 +11,11 @@ public class NoteModel extends ModelObject {
     @Ignore
     String kind = getClass().getSimpleName();
 
-    /**
-     * Database id used as a primary key.
-     */
     @PrimaryKey
     @Required
     private String id;
-
     @Required
     private Double createdTimeStamp;
-
     @Required
     private Double updatedTimeStamp;
 

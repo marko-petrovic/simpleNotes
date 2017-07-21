@@ -6,7 +6,7 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import classes.simpleNotes.injection.schedulers.BackgroundScheduler;
-import classes.simpleNotes.model.NoteModel;
+import classes.simpleNotes.persistance.model.NoteModel;
 import classes.simpleNotes.persistance.RealmDatabaseConnector;
 import classes.simpleNotes.persistance.RealmDatabasesFactory;
 import classes.simpleNotes.persistance.repositories.ModelRepository;

@@ -40,4 +40,3 @@ public interface IPresenter {
      */
     Serializable getState();
 }
-

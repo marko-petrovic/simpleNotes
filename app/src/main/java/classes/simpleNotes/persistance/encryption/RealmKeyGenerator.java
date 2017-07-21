@@ -21,8 +21,8 @@ public class RealmKeyGenerator implements KeyGenerator {
      */
     @Override
     public byte[] generateRealmKey(@NotNull String password) {
-        RNCryptorNative cryptor = new RNCryptorNative();
+        RNCryptorNative rnCryptorNative = new RNCryptorNative();
 
-        return cryptor.encrypt(password, password);
+        return rnCryptorNative.encrypt(password, password);
     }
 }

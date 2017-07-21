@@ -38,18 +38,23 @@ public class ValidateNewNoteUseCase {
      */
     public Observable<NoteValidationViewModel> validateNewNote(NoteViewModel noteViewModel) {
         return just(noteViewModel.noteText.isEmpty() || noteViewModel.noteTitle.isEmpty())
-                .flatMap(somethingIsMissing -> just(
-                        new Builder()
-                                .validationResult(somethingIsMissing ?
-                                        getNonValidResult(noteViewModel) :
-                                        NEW_NOTE_VALID
-                                )
-                                .validationMessage(somethingIsMissing ?
-                                        getNonValidMessage(noteViewModel) :
-                                        resources.getString(R.string.new_note_validation_passed_fine)
-                                )
-                                .build()
-                ));
+                .flatMap(
+                        somethingIsMissing -> just(
+                                new Builder()
+                                        .validationResult(somethingIsMissing ?
+                                                getNonValidResult(noteViewModel) :
+                                                NEW_NOTE_VALID
+                                        )
+                                        .validationMessage(somethingIsMissing ?
+                                                getNonValidMessage(noteViewModel) :
+                                                resources
+                                                        .getString(
+                                                                R.string.new_note_validation_passed_fine
+                                                        )
+                                        )
+                                        .build()
+                        )
+                );
     }
 
     private NewNoteValidationResult getNonValidResult(NoteViewModel noteViewModel) {
@@ -64,11 +69,20 @@ public class ValidateNewNoteUseCase {
 
     private String getNonValidMessage(NoteViewModel noteViewModel) {
         if (noteViewModel.noteTitle.isEmpty() && noteViewModel.noteText.isEmpty()) {
-            return resources.getString(R.string.new_note_validation_error_message_both_empty);
+            return resources
+                    .getString(
+                            R.string.new_note_validation_error_message_both_empty
+                    );
         } else if (noteViewModel.noteText.isEmpty()) {
-            return resources.getString(R.string.new_note_validation_error_message_body_empty);
+            return resources
+                    .getString(
+                            R.string.new_note_validation_error_message_body_empty
+                    );
         } else {
-            return resources.getString(R.string.new_note_validation_error_message_title_empty);
+            return resources
+                    .getString(
+                            R.string.new_note_validation_error_message_title_empty
+                    );
         }
     }
 }

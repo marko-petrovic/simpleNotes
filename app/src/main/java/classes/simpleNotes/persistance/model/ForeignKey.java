@@ -1,4 +1,4 @@
-package classes.simpleNotes.model;
+package classes.simpleNotes.persistance.model;
 
 /**
  * Database object's reference.

@@ -1,6 +1,6 @@
 package classes.simpleNotes.persistance.repositories;
 
-import classes.simpleNotes.model.NoteModel;
+import classes.simpleNotes.persistance.model.NoteModel;
 
 /**
  * Provides methods to work with {@link NoteModel} objects repository.

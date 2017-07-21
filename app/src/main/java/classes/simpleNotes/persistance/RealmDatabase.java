@@ -3,7 +3,7 @@ package classes.simpleNotes.persistance;
 import java.io.File;
 import java.io.IOException;
 
-import classes.simpleNotes.model.AutoIdObject;
+import classes.simpleNotes.persistance.model.AutoIdObject;
 import fj.data.List;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -154,6 +154,7 @@ public class RealmDatabase {
 
             return results.size() > 0 ? results.get(0) : null;
         }
+
         return null;
     }
 }

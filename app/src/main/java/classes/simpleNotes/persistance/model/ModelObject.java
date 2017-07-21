@@ -1,4 +1,4 @@
-package classes.simpleNotes.model;
+package classes.simpleNotes.persistance.model;
 
 import java.io.Serializable;
 
@@ -8,8 +8,17 @@ import io.realm.RealmObject;
  * Represents base parent class for all model objects.
  */
 public class ModelObject extends RealmObject implements AutoIdObject, Serializable {
+    /**
+     * Every ModelObject will have {@code String} id.
+     */
     private String id;
+    /**
+     * ModelObject's creation timestamp as {@link Double} value.
+     */
     private Double createdTimeStamp;
+    /**
+     * ModelObject's last update timestamp as {@link Double} value.
+     */
     private Double updatedTimeStamp;
 
     public ModelObject() {

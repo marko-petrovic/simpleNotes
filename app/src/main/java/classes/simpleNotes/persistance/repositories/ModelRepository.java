@@ -1,6 +1,6 @@
 package classes.simpleNotes.persistance.repositories;
 
-import classes.simpleNotes.model.ModelObject;
+import classes.simpleNotes.persistance.model.ModelObject;
 import fj.data.List;
 import rx.Observable;
 

@@ -18,7 +18,7 @@ import classes.simpleNotes.ui.view.alerts.GeneralAlertDialogView;
 import rx.Scheduler;
 
 /**
- * Base {@link android.app.Activity} that provides common features to other activities.
+ * Base {@link android.app.Activity} that provides common features to all other activities.
  */
 public class BaseActivity extends AppCompatActivity {
     @Inject
@@ -30,8 +30,8 @@ public class BaseActivity extends AppCompatActivity {
     Scheduler backgroundTaskScheduler;
 
     @MainThreadScheduler
-    @Named(SchedulersModule.MAIN_THREAD_SCHEDULER)
     @Inject
+    @Named(SchedulersModule.MAIN_THREAD_SCHEDULER)
     Scheduler mainThreadScheduler;
 
     private GeneralAlertsPresenter generalAlertsPresenter;

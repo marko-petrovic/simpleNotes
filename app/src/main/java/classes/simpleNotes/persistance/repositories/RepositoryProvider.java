@@ -2,9 +2,8 @@ package classes.simpleNotes.persistance.repositories;
 
 import javax.inject.Inject;
 
-import classes.simpleNotes.model.ModelObject;
-import classes.simpleNotes.model.NoteModel;
-import classes.simpleNotes.persistance.repositories.ModelRepository;
+import classes.simpleNotes.persistance.model.ModelObject;
+import classes.simpleNotes.persistance.model.NoteModel;
 
 /**
  * Provides access to Realm model object repositories.

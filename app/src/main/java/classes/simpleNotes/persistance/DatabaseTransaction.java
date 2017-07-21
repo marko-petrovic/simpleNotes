@@ -2,23 +2,23 @@ package classes.simpleNotes.persistance;
 
 import javax.inject.Singleton;
 
-import classes.simpleNotes.model.ModelObject;
+import classes.simpleNotes.persistance.model.ModelObject;
 import fj.data.List;
 
 /**
- * Represents Realm database transaction.
+ * Represents transactions for Realm database.
  */
 @Singleton
 public interface DatabaseTransaction {
     /**
-     * Commits transaction changes.
+     * Commits database transaction changes.
      *
      * @return {@code true} or {@code false}.
      */
     boolean commit(TransactionFunction func);
 
     /**
-     * Represents a function with TransactionSession argument.
+     * Represents a function with {@link TransactionSession} argument.
      */
     interface TransactionFunction {
         void call(TransactionSession session);
@@ -41,7 +41,7 @@ public interface DatabaseTransaction {
         void create(List<? extends ModelObject> objects);
 
         /**
-         * Updates object in the database. <br>
+         * Updates object in the database.
          *
          * @param object {@link ModelObject} that is going to be updated.
          */

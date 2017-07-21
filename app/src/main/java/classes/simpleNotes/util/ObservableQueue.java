@@ -25,18 +25,22 @@ public class ObservableQueue<T> {
     @Inject
     public ObservableQueue() {
         itemsObservable = updates
-                .flatMap(event -> {
-                    synchronized (items) {
-                        final ArrayList<T> items = new ArrayList<>(this.items);
+                .flatMap(
+                        event -> {
+                            synchronized (items) {
+                                final ArrayList<T> items = new ArrayList<>(this.items);
 
-                        return from(items);
-                    }
-                })
-                .doOnNext(alert -> {
-                    synchronized (items) {
-                        items.remove(alert);
-                    }
-                })
+                                return from(items);
+                            }
+                        }
+                )
+                .doOnNext(
+                        alert -> {
+                            synchronized (items) {
+                                items.remove(alert);
+                            }
+                        }
+                )
                 .share();
     }
 

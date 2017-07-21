@@ -27,8 +27,10 @@ public class GetPendingGeneralAlertsUseCaseTest {
 
     @Test
     public void shouldRequestToQueue() throws Exception {
-        Observable<GeneralAlert> observable = Observable.create(subscriber -> {
-        });
+        Observable<GeneralAlert> observable = Observable.create(
+                subscriber -> {
+                }
+        );
 
         when(generalAlertsQueue.pendingGeneralAlerts())
                 .thenReturn(observable);

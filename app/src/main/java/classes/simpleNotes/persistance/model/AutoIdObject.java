@@ -1,4 +1,4 @@
-package classes.simpleNotes.model;
+package classes.simpleNotes.persistance.model;
 
 /**
  * Provides methods to get and set Object's id.
