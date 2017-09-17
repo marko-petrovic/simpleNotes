@@ -19,6 +19,9 @@ import io.realm.RealmResults;
  */
 public class RealmDatabase {
 
+    /**
+     * @see Realm
+     */
     protected final Realm realm;
 
     /**
@@ -113,7 +116,7 @@ public class RealmDatabase {
     }
 
     /**
-     * Returns all objects as {@link List}.
+     * Returns all objects as functional Java List.
      *
      * @param clazz of requested object.
      * @return {@link List} of all {@link RealmObject}s stored in the database.
