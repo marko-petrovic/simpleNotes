@@ -29,6 +29,10 @@ import dagger.Component;
         LocalRepositoriesModule.class,
         SchedulersModule.class
 })
+
+/**
+ * Inject every component that extends {@link Context}.
+ */
 public interface ApplicationComponent {
 
     android.app.Application getCustomApplication();

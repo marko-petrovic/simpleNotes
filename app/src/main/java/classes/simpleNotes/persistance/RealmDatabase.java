@@ -15,12 +15,12 @@ import io.realm.RealmResults;
 /**
  * Realm database wrapper class.
  *
- * @see Realm
+ * @see Realm .
  */
 public class RealmDatabase {
 
     /**
-     * @see Realm
+     * @see Realm .
      */
     protected final Realm realm;
 

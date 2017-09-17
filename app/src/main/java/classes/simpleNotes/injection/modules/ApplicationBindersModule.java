@@ -1,7 +1,5 @@
 package classes.simpleNotes.injection.modules;
 
-import javax.inject.Singleton;
-
 import classes.simpleNotes.persistance.encryption.KeyGenerator;
 import classes.simpleNotes.persistance.encryption.RealmKeyGenerator;
 import dagger.Binds;
